@@ -57,11 +57,12 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
   filter: blur(6px);
 }
 
-/* KEROPPI FEITO COM CSS - SEM LAÇO VERMELHO */
+/* KEROPPI FEITO COM CSS - CORREÇÕES APLICADAS */
 .keroppi-wrap{
   position:absolute;
   bottom:10vh;
-  left:5%;width:200px;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:40
+  left:5%;width:200px;display:flex;flex-direction:column;align-items:center;gap:8px;
+  z-index:50; /* AUMENTEI O Z-INDEX PARA FICAR NA FRENTE DOS PRESENTES */
 }
 .keroppi{
   width:160px;height:160px;
@@ -83,7 +84,7 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
   height:28px;
   background:#fff;
   border-radius:50%;
-  top:50px;
+  top:45px; /* AJUSTEI A POSIÇÃO DOS OLHOS */
   border:3px solid #327a30;
   animation: blink 5s infinite;
 }
@@ -108,14 +109,14 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
   height:16px;
   background:linear-gradient(180deg,#ffc6d9,#ff93b3);
   border-radius: 16px;
-  bottom:55px; /* AUMENTEI A DISTÂNCIA DA BOCA */
+  bottom:50px; /* POSICIONAMENTO CORRIGIDO DAS BOCHEHAS */
 }
 .keroppi .cheek.left{left:32px}
 .keroppi .cheek.right{right:32px}
 .keroppi .smile{
   position:absolute;
   left:50%;
-  bottom:48px; /* AUMENTEI A DISTÂNCIA DAS BOCHEHAS */
+  bottom:42px; /* POSIÇÃO DO SORRISO CORRIGIDA */
   width:80px;
   height:32px;
   transform:translateX(-50%);
@@ -133,7 +134,7 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
   box-shadow:0 8px 26px rgba(0,0,0,0.5);
   max-width:300px;
   font-size:14px;
-  z-index:45;
+  z-index:55; /* Z-INDEX MAIOR QUE O SAPO */
   border: 2px solid #ff9ab8;
   margin-bottom: 10px;
   order: -1;
@@ -161,7 +162,7 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
   line-height: 1;
 }
 
-/* PRESENTES */
+/* PRESENTES - Z-INDEX REDUZIDO */
 .pile{
   position:absolute;
   left:55%;
@@ -171,7 +172,7 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
   max-width:700px;
   height:44vh;
   pointer-events:auto;
-  z-index:35;
+  z-index:40; /* Z-INDEX MENOR QUE O SAPO */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -252,6 +253,7 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
     left:2%;
     width:130px;
     bottom: 8vh;
+    z-index: 50; /* MANTIVE O Z-INDEX ALTO NO MOBILE */
   }
   .keroppi{
     width:100px;
@@ -260,7 +262,7 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
   .keroppi .eye{
     width:18px;
     height:18px;
-    top:32px;
+    top:28px; /* AJUSTE PARA MOBILE */
     border:2px solid #327a30;
   }
   .keroppi .eye.left{left:24px}
@@ -274,14 +276,14 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
   .keroppi .cheek{
     width:20px;
     height:10px;
-    bottom:35px; /* AJUSTE PARA MOBILE */
+    bottom:32px; /* AJUSTE MELHOR PARA MOBILE */
   }
   .keroppi .cheek.left{left:20px}
   .keroppi .cheek.right{right:20px}
   .keroppi .smile{
     width:50px;
     height:20px;
-    bottom:30px; /* AJUSTE PARA MOBILE */
+    bottom:26px; /* AJUSTE MELHOR PARA MOBILE */
     border-bottom: 3px solid #327a30;
   }
   
@@ -290,6 +292,7 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
     font-size:11px;
     padding:10px 12px;
     margin-bottom: 5px;
+    z-index: 55; /* MANTIVE ALTO NO MOBILE */
   }
   
   .pile{
@@ -298,6 +301,7 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
     height:50vh;
     bottom: 12vh;
     padding: 0 10px;
+    z-index: 40; /* MANTIVE BAIXO NO MOBILE */
   }
   .present-row{
     margin-bottom: 15px;
@@ -332,6 +336,7 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
 @media(max-width:480px){
   .keroppi-wrap{
     width:110px;
+    z-index: 50;
   }
   .keroppi{
     width:90px;
@@ -340,7 +345,7 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
   .keroppi .eye{
     width:16px;
     height:16px;
-    top:28px;
+    top:25px; /* AJUSTE FINO PARA TELAS PEQUENAS */
   }
   .keroppi .eye.left{left:20px}
   .keroppi .eye.right{right:20px}
@@ -351,23 +356,25 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
   .keroppi .cheek{
     width:18px;
     height:9px;
-    bottom:32px;
+    bottom:28px; /* AJUSTE FINO */
   }
   .keroppi .cheek.left{left:18px}
   .keroppi .cheek.right{right:18px}
   .keroppi .smile{
     width:45px;
     height:18px;
-    bottom:28px;
+    bottom:24px; /* AJUSTE FINO */
   }
   
   .speech{
     max-width:150px;
     font-size:10px;
+    z-index: 55;
   }
   
   .pile{
     width:90%;
+    z-index: 40;
   }
   .present-row{
     gap: 10px;
@@ -385,7 +392,7 @@ const messages = [
   'quero te abraçar enquanto comemos bobs, quando isso acontecer vou ser a pessoa mais feliz do mundo',
   'sabia que gosto de você muitão sabia',
   'sou seu duzinho e sempre vou estar com você até nos momentos mais complicados',
-  'saiba que voce é a mulher mais linda e charmosa que eu ja conheci tudo em você me encanta, suas inseguranças me fazem gostar mais ainda de você, quero poder um dia amar tanto as suas inseguranças que você vai ate se esquecer delas'
+  'saiba que voce é a mulher mais linda e charmosa que eu ja conheci tudo em você me encanta, suas inseguranças me fazem gostar mais ainda de você, quero poder um dia amar tanto as suas inseguranças que você vai ate se esqueder delas'
 ];
 
 const comments = [
