@@ -108,14 +108,14 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
   height:16px;
   background:linear-gradient(180deg,#ffc6d9,#ff93b3);
   border-radius: 16px;
-  bottom:48px;
+  bottom:55px; /* AUMENTEI A DISTÂNCIA DA BOCA */
 }
 .keroppi .cheek.left{left:32px}
 .keroppi .cheek.right{right:32px}
 .keroppi .smile{
   position:absolute;
   left:50%;
-  bottom:42px;
+  bottom:48px; /* AUMENTEI A DISTÂNCIA DAS BOCHEHAS */
   width:80px;
   height:32px;
   transform:translateX(-50%);
@@ -244,24 +244,134 @@ html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-sys
 /* audio control */
 .audio-control{position:absolute;top:14px;right:14px;z-index:90;background:rgba(255,255,255,0.06);padding:8px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(4px);color:#fff}
 
-/* responsive */
-@media(max-width:600px){
-  .keroppi-wrap{left:3%;width:140px; bottom: 12vh;}
-  .keroppi{width:120px;height:120px}
-  .keroppi .eye{width:22px;height:22px;top:40px}
-  .keroppi .eye.left{left:30px}
-  .keroppi .eye.right{right:30px}
-  .keroppi .pupil{width:10px;height:10px;top:6px;left:6px}
-  .keroppi .cheek{width:24px;height:12px;bottom:38px}
-  .keroppi .cheek.left{left:24px}
-  .keroppi .cheek.right{right:24px}
-  .keroppi .smile{width:60px;height:24px;bottom:34px}
-  .speech{max-width:220px;font-size:12px;}
-  .modal{width:92%}
-  .present{box-shadow:0 8px 18px rgba(0,0,0,0.5);}
-  .grass{height:26vh}
-  .pile{height:46vh; bottom: 16vh; padding: 0 15px; left: 60%;}
-  .present-row { margin-bottom: 20px; gap: 20px; }
+/* RESPONSIVE - VERSÃO MOBILE CORRIGIDA */
+@media(max-width:768px){
+  .stage{padding:12px 8px;}
+  
+  .keroppi-wrap{
+    left:2%;
+    width:130px;
+    bottom: 8vh;
+  }
+  .keroppi{
+    width:100px;
+    height:100px;
+  }
+  .keroppi .eye{
+    width:18px;
+    height:18px;
+    top:32px;
+    border:2px solid #327a30;
+  }
+  .keroppi .eye.left{left:24px}
+  .keroppi .eye.right{right:24px}
+  .keroppi .pupil{
+    width:8px;
+    height:8px;
+    top:5px;
+    left:5px;
+  }
+  .keroppi .cheek{
+    width:20px;
+    height:10px;
+    bottom:35px; /* AJUSTE PARA MOBILE */
+  }
+  .keroppi .cheek.left{left:20px}
+  .keroppi .cheek.right{right:20px}
+  .keroppi .smile{
+    width:50px;
+    height:20px;
+    bottom:30px; /* AJUSTE PARA MOBILE */
+    border-bottom: 3px solid #327a30;
+  }
+  
+  .speech{
+    max-width:180px;
+    font-size:11px;
+    padding:10px 12px;
+    margin-bottom: 5px;
+  }
+  
+  .pile{
+    left:50%;
+    width:85%;
+    height:50vh;
+    bottom: 12vh;
+    padding: 0 10px;
+  }
+  .present-row{
+    margin-bottom: 15px;
+    gap: 15px;
+  }
+  .present{
+    box-shadow:0 6px 12px rgba(0,0,0,0.4);
+  }
+  
+  .grass{
+    height:28vh;
+  }
+  
+  .modal{
+    width:95%;
+    padding:14px;
+  }
+  .modal h3{
+    font-size:16px;
+  }
+  .modal p{
+    font-size:14px;
+  }
+  
+  .audio-control{
+    top:10px;
+    right:10px;
+    padding:6px;
+  }
+}
+
+@media(max-width:480px){
+  .keroppi-wrap{
+    width:110px;
+  }
+  .keroppi{
+    width:90px;
+    height:90px;
+  }
+  .keroppi .eye{
+    width:16px;
+    height:16px;
+    top:28px;
+  }
+  .keroppi .eye.left{left:20px}
+  .keroppi .eye.right{right:20px}
+  .keroppi .pupil{
+    width:7px;
+    height:7px;
+  }
+  .keroppi .cheek{
+    width:18px;
+    height:9px;
+    bottom:32px;
+  }
+  .keroppi .cheek.left{left:18px}
+  .keroppi .cheek.right{right:18px}
+  .keroppi .smile{
+    width:45px;
+    height:18px;
+    bottom:28px;
+  }
+  
+  .speech{
+    max-width:150px;
+    font-size:10px;
+  }
+  
+  .pile{
+    width:90%;
+  }
+  .present-row{
+    gap: 10px;
+  }
 }
 </style>
 
